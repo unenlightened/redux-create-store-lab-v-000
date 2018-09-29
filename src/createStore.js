@@ -1,6 +1,3 @@
-import candyReducer from './reducers/candyReducer'
-import countReducer from './reducers/countReducer'
-
 export default function createStore(reducer) {
   let state;
 
@@ -8,6 +5,8 @@ export default function createStore(reducer) {
     state = reducer(state, action)
     render()
   }
+
+  dispatch()
 
   function getState() {
     return state;
@@ -22,7 +21,3 @@ function render() {
   const container = document.getElementById('container');
 }
 
-let candyStore = createStore(candyReducer)
-candyStore.dispatch({ type: '@@INIT' })
-// let countStore = createStore(countReducer)
-// countStore.dispatch({ type: '@@INIT' })
